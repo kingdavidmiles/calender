@@ -1,12 +1,11 @@
 <template>
   <div>
-    <div class="row" >
-      <div class="col-md-3 p-3" >
-          
+    <div class="row">
+      <div class="col-md-3 p-3">
         <!-- <h2>hello miles</h2> -->
-        <br>
-        <br>
-        <div class="card mb-3" style="max-width: 540px" v-for="i in 5" :key="i" >
+        <br />
+        <br />
+        <div class="card mb-3" style="max-width: 540px" v-for="i in 5" :key="i">
           <div class="row g-0">
             <div class="col-md-5">
               <img
@@ -114,6 +113,7 @@ export default {
     updateEvent(arg) {
       this.$store.commit("UPDATE_EVENT", arg.event);
     },
+  
     handleSelect(arg) {
       this.$store.commit("ADD_EVENT", {
         id: new Date().getTime(),

@@ -10,7 +10,14 @@
     </div> -->
 
     <div class="p-3">
-      <legend>Edit event</legend>
+     <div class="row">
+       <div class="col-10">
+          <legend>Edit event</legend>
+       </div>
+        <div class="col-2 float">
+         <b-button @click="deleteEvent">Del</b-button>
+       </div>
+     </div>
       <b>Title:</b> {{ event.title }} <br />
       <b-form-input type="text" v-model="title" class="px-4"></b-form-input>
       <br />
@@ -28,6 +35,9 @@
 .card {
   padding: 20px;
 }
+.float{
+  align-content: end;
+}
 </style>
 <script>
 export default {
@@ -43,6 +53,11 @@ export default {
         title: this.title,
         start: this.start,
         end: this.end,
+      });
+    },
+     deleteEvent(arg) {
+      this.$store.commit("DELETE_EVENT",  {
+        id: this.event.id,
       });
     },
   },
